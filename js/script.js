@@ -61,7 +61,6 @@ createApp({
             this.activeSlideIndex = index
         },
     }
-},
 }).mount("#app");
 // ******** VUE ********
 
