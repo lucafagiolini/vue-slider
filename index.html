@@ -30,7 +30,8 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div v-for="(currentImage, index) in slides" v-show="index == activeSlideIndex" class="item">
+                <div v-for="(currentImage, index) in slides" v-show="index == activeSlideIndex" class="item"
+                    @mouseover="stopAutoplay" @mouseleave="autoplay">
                     <img :src='currentImage.image' alt="">
                     <div class="text">
                         <h3>

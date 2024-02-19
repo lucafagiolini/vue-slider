@@ -6,6 +6,8 @@ createApp({
             // tutti i nostri dati
 
             activeSlideIndex: 0,
+            hoverAutoplay: null,
+
 
             slides: [
                 {
@@ -67,10 +69,16 @@ createApp({
 
         // funzione per l'autoplay
         autoplay() {
-            setInterval(() => {
+            hoverAutoplay = setInterval(() => {
                 this.nextSlide()
-            }, 3000)
+            }, 1000)
+        },
+
+        stopAutoplay() {
+            clearInterval(hoverAutoplay);
         }
+
+
     }
 }).mount("#app");
 // ******** VUE ********
