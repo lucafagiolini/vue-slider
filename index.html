@@ -27,20 +27,19 @@
 
 <body data-bs-theme="dark">
     <div id="app">
+        ciao
 
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
-                    <img v-for="(currentImage, index) in slides.image" :key="index" :src='currentImage'
-                        alt="Spiderman" />
+                <div v-for="(currentImage, index) in slides" v-show="index == activeSlideIndex" class="item">
+                    <img :src='currentImage.image' alt="">
                     <div class="text">
-                        <h3>Spiderman</h3>
+                        <h3>
+                            {{ currentImage.title }}
+                        </h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
+                            {{ currentImage.text }}
                         </p>
                     </div>
                 </div>
