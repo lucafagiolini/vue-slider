@@ -37,6 +37,10 @@ createApp({
         }
     },
 
+    mounted() {
+        this.autoplay()
+    },
+
     methods: {
         nextSlide() {
             this.activeSlideIndex++;
@@ -60,6 +64,13 @@ createApp({
             console.log(index)
             this.activeSlideIndex = index
         },
+
+        // funzione per l'autoplay
+        autoplay() {
+            setInterval(() => {
+                this.nextSlide()
+            }, 3000)
+        }
     }
 }).mount("#app");
 // ******** VUE ********
